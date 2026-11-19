@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
   const clicks = await getClicksCollection();
   if (!clicks) {
-    return NextResponse.json({ error: "MONGODB_URI not configured" }, { status: 503 });
+    return NextResponse.json({ error: "MONGO_URI not configured" }, { status: 503 });
   }
 
   await clicks.updateOne({ _id: id }, { $inc: { count: 1 } }, { upsert: true });
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 export async function GET() {
   const clicks = await getClicksCollection();
   if (!clicks) {
-    return NextResponse.json({ error: "MONGODB_URI not configured" }, { status: 503 });
+    return NextResponse.json({ error: "MONGO_URI not configured" }, { status: 503 });
   }
 
   const docs = await clicks.find().toArray();
