@@ -10,7 +10,7 @@ export default function Home() {
         <ThemeToggle />
       </div>
 
-      <Profile name={profile.name} bio={profile.bio} image={profile.image} />
+      <Profile name={profile.name} bio={profile.bio} avatar={profile.avatar} />
 
       <ul className="mt-8 flex flex-col gap-3">
         {profile.links.map((link) => (
